@@ -1,29 +1,3 @@
-// import React from 'react'
-
-// function Extrectcode({extractedText}) {
-//   return (
-//     <div>
-//         {extractedText && (
-//         <div className="mt-4">
-//           <h4>Extracted Text:</h4>
-//           <pre
-//             style={{
-//               whiteSpace: "pre-wrap", // Preserve layout
-//               backgroundColor: "#eef2f3",
-//               padding: "15px",
-//               borderRadius: "5px",
-//             }}
-//           >
-//             {extractedText}
-//           </pre>
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
-
-// export default Extrectcode
-
 import React from "react";
 import { useLocation } from "react-router-dom";
 
@@ -42,7 +16,7 @@ const Extractcode = () => {
           whiteSpace: "pre-wrap",
         }}
       >
-        {extractedText}
+        <h4>{extractedText}</h4>
       </pre>
     </div>
   );

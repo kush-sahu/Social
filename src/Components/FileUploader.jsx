@@ -119,6 +119,7 @@ const FileUploader = () => {
             border: "2px solid white",
             padding: "5%",
             margin: "auto",
+            
           }}
         />
         <div className="mt-3">
@@ -141,7 +142,14 @@ const FileUploader = () => {
         <button
           onClick={processFile}
           disabled={loading}
-          className="btn btn-primary mt-3"
+          
+          style={{
+            border: "2px solid white",
+            backgroundColor: "rgb(6, 42, 83)",
+            borderRadius: "10px",
+            color: "white",
+            padding: "10px",
+          }}
         >
           {loading ? "Processing..." : "Extract Text"}
         </button>
