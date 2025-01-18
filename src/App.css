@@ -1,0 +1,64 @@
+.main {
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://wallpaperaccess.com/full/9448012.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Smooch Sans', serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+.Uploadbtn{
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+.load{
+    width:10%;
+    height:10%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-top:20%;
+}
+.extract-pre{
+    background-color: #f9f9f9;
+          padding: 15px;
+          border-radius: 5px;
+          white-space: pre-wrap;
+}
+.file{
+    border: 2px dashed gray;
+    border-radius: 10px;
+    background-color:#f9f9f9 ;
+    height: 70vh;
+    width: 70%;
+    margin: auto;
+}
+.heading{
+    font-size: 34px;
+    margin: 35px;
+}
+.file-input{
+    background: rgb(35 50 78);
+    width: 30%;
+     height: 50%;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    outline: none;
+     border: 2px solid white;
+    padding: 5%;
+     margin: auto;
+}
+.file-btn{
+    border: 2px solid white;
+            background-color: rgb(6, 42, 83);
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+}

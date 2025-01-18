@@ -3,8 +3,10 @@ import Tesseract from "tesseract.js";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-
+import NavBar from "./NavBar";
+import "../App.css"
 // Set worker source for PDF.js
+// this is the main component where we are uploading the file and extracting the text from the file
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 const FileUploader = () => {
@@ -24,13 +26,14 @@ const FileUploader = () => {
 
   const processFile = async () => {
     if (!file) {
+      // Errorn handling when no file is selected
       alert("Please upload a file.");
       return;
     }
 
     setLoading(true);
     const fileType = file.type || file.name.split(".").pop();
-
+   //OCR for Extracting text from PDF and Image files
     try {
       let extractedText = "";
       if (fileType === "application/pdf" || fileType.toLowerCase() === "pdf") {
@@ -82,45 +85,24 @@ const FileUploader = () => {
   };
 
   return (
+    <>
+    <NavBar value={false} />
     <div className="container mt-5">
       <div
-        className="box1 border p-4 text-center"
-        style={{
-          border: "2px dashed gray",
-          borderRadius: "10px",
-          backgroundColor: "#f9f9f9",
-          height: "70vh",
-          width: "70%",
-          margin: "auto",
-        }}
+        className="box1 border p-4 text-center file"
+        
         onDragOver={(event) => event.preventDefault()}
         onDrop={handleFileDrop}
       >
-        <h3
-          style={{
-            fontSize: "34px",
-            margin: "35px",
-          }}
-        >
+        <h3 className="heading">
           Drop file here
         </h3>
         <input
           type="file"
           accept=".pdf,image/*"
           onChange={handleFileChange}
-          style={{
-            background: "rgb(35 50 78)",
-            width: "30%",
-            height: "50%",
-            borderRadius: "50%",
-            color: "white",
-            cursor: "pointer",
-            outline: "none",
-            border: "2px solid white",
-            padding: "5%",
-            margin: "auto",
-            
-          }}
+          className="file-input"
+          
         />
         <div className="mt-3">
           <label htmlFor="language" className="me-2">
@@ -132,6 +114,7 @@ const FileUploader = () => {
             onChange={(e) => setLanguage(e.target.value)}
             className="form-select w-auto d-inline"
           >
+            {/* // Selecting the language for the OCR */}
             <option value="eng">English</option>
             <option value="spa">Spanish</option>
             <option value="fra">French</option>
@@ -142,20 +125,13 @@ const FileUploader = () => {
         <button
           onClick={processFile}
           disabled={loading}
-          
-          style={{
-            border: "2px solid white",
-            backgroundColor: "rgb(6, 42, 83)",
-            borderRadius: "10px",
-            color: "white",
-            padding: "10px",
-          }}
-        >
+          className="file-btn">
           {loading ? "Processing..." : "Extract Text"}
         </button>
         {file && <p className="mt-3 " style={{margin:'10%'}}>File Selected: {file.name}</p>}
       </div>
     </div>
+    </>
   );
 };
 
