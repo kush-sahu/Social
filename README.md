@@ -1,4 +1,4 @@
-# Social Media Content Analyzer Assignment task From Unthinkable Solution
+# Project: Social Media Content Analyzer is an application that analyzes social media posts and suggests engagement improvements.
 
 ## Overview
 This project, **Social Media Content Analyzer**, is a React-based application designed to extract and analyze content from uploaded PDF and image files. The application uses libraries like `Tesseract.js` for Optical Character Recognition (OCR) and `pdfjs-dist` for handling PDF files.
