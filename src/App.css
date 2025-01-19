@@ -69,7 +69,9 @@
         height: 80VH;
     }
     .file-input {
-        width: 68%;
+        width: 60%;
+        height: 37%;
+
         PADDING: 14%;
     }
     .load {
